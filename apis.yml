@@ -1,23 +1,71 @@
 aid: artin-energy
+
 name: Artin Energy
-description: 'Artin Energy is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Artin Energy provides solar and renewable energy solutions for businesses, including solar modules, green hydrogen, energy storage, EV charging stations, and hydroponics powered by AI. The company offers engineering, procurement, and construction services, power purchase agreements, and consulting to optimize energy use for commercial clients.'
+
 url: https://raw.githubusercontent.com/api-evangelist/artin-energy/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
-- Company
-apis: []
+- Energy
+- Renewable
+- Solar
+- Green Hydrogen
+- Storage
+- EV Charging
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/artin-energy-clarity-security.txt
+- type: WellKnown
+  url: well-known/artin-energy-well-known.yml
+- type: Security
+  url: https://clarity.com/vdp
+- type: Hosts
+  url: hosts/artin-energy-hosts.yml
+- type: PrivacyPolicy
+  url: https://artinenergy.com/privacy-policy/
+- type: VulnerabilityDisclosure
+  url: security/artin-energy-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/artin-energy-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/artin-energy-stock
+  url: https://artinenergy.com
+
+apis: []
+
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: No public API specifications were found for Artin Energy; attempts to fetch OpenAPI files from api.artinenergy.com and artinenergy.com returned errors or HTML pages.
+  evidence:
+    - url: https://api.artinenergy.com/openapi.json
+      status: error
+    - url: https://artinenergy.com/openapi.json
+      status: 404
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
